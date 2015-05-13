@@ -2,7 +2,7 @@ html, body {
   height: 100%;
 }
 
-h2 {
+p {
   background-color: red;
   font: 13.34px helvetica, arial, clean, sans-serif;
   *font-size: small;
