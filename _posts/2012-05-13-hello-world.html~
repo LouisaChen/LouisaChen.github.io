@@ -9,7 +9,7 @@
 
 <p>{{ page.date | date_to_string }}</p>
 
-
+<div>
 	<table>
 		<tr>
 			<td>1</td>
@@ -20,3 +20,4 @@
 			<td>4</td>
 		</tr>
 	</table>
+</div>
