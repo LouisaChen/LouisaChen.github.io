@@ -1,0 +1,159 @@
+<h3 id="i-">I. 新建一个项目</h3>
+<ol>
+  <li>
+    <p>由顶部菜单栏进入<code>Query</code>页面，然后点击<code>Manage Projects</code>。</p>
+
+    <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/1%20manage-prject.png" alt="" /></p>
+  </li>
+  <li>
+    <p>点击<code>+ Project</code>按钮添加一个新的项目。</p>
+
+    <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/2%20%2Bproject.png" alt="" /></p>
+  </li>
+  <li>
+    <p>填写下列表单并点击<code>submit</code>按钮提交请求。</p>
+
+    <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/3%20new-project.png" alt="" /></p>
+  </li>
+  <li>
+    <p>成功后，底部会显示通知。</p>
+
+    <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/3.1%20pj-created.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="ii-">II. 同步一张表</h3>
+<ol>
+  <li>
+    <p>在顶部菜单栏点击<code>Tables</code>，然后点击<code>+ Sync</code>按钮加载hive表元数据。</p>
+
+    <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/4%20%2Btable.png" alt="" /></p>
+  </li>
+  <li>
+    <p>输入表名并点击<code>Sync</code>按钮提交请求。</p>
+
+    <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/5%20hive-table.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="iii-cube">III. 新建一个cube</h3>
+<p>首先，在顶部菜单栏点击<code>Cubes</code>。然后点击<code>+Cube</code>按钮进入cube designer页面。</p>
+
+<p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/6%20%2Bcube.png" alt="" /></p>
+
+<p><strong>步骤1. Cube信息</strong></p>
+
+<p>填写cube基本信息。点击<code>Next</code>进入下一步。</p>
+
+<p>你可以使用字母、数字和“_”来为你的cube命名（注意名字中不能使用空格）。</p>
+
+<p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/7%20cube-info.png" alt="" /></p>
+
+<p><strong>步骤2. 维度</strong></p>
+
+<ol>
+  <li>
+    <p>建立事实表。</p>
+
+    <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/8%20dim-factable.png" alt="" /></p>
+  </li>
+  <li>
+    <p>点击<code>+Dimension</code>按钮添加一个新的维度。</p>
+
+    <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/8%20dim-%2Bdim.png" alt="" /></p>
+  </li>
+  <li>
+    <p>可以选择不同类型的维度加入一个cube。我们在这里列出其中一部分供你参考。</p>
+
+    <ul>
+      <li>
+        <p>从事实表获取维度。
+    <img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/8%20dim-typeA.png" alt="" /></p>
+      </li>
+      <li>
+        <p>从查找表获取维度。
+    <img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/8%20dim-typeB-1.png" alt="" /></p>
+
+        <pre><code>![](https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/8%20dim-typeB-2.png)     
+</code></pre>
+      </li>
+      <li>
+        <p>从有分级结构的查找表获取维度。
+    <img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/8%20dim-typeC.png" alt="" /></p>
+      </li>
+      <li>
+        <p>从有衍生维度(derived dimensions)的查找表获取维度。
+    <img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/8%20dim-typeD.png" alt="" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>用户可以在保存维度后进行编辑。
+<img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/8%20dim-edit.png" alt="" /></p>
+  </li>
+</ol>
+
+<p><strong>步骤3. 度量</strong></p>
+
+<ol>
+  <li>
+    <p>点击<code>+Measure</code>按钮添加一个新的度量。
+<img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/9%20meas-%2Bmeas.png" alt="" /></p>
+  </li>
+  <li>
+    <p>根据它的表达式共有5种不同类型的度量：<code>SUM</code>、<code>MAX</code>、<code>MIN</code>、<code>COUNT</code>和<code>COUNT_DISTINCT</code>。请谨慎选择返回类型，它与<code>COUNT(DISTINCT)</code>的误差率相关。</p>
+    <ul>
+      <li>
+        <p>SUM</p>
+
+        <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/9%20meas-sum.png" alt="" /></p>
+      </li>
+      <li>
+        <p>MIN</p>
+
+        <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/9%20meas-min.png" alt="" /></p>
+      </li>
+      <li>
+        <p>MAX</p>
+
+        <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/9%20meas-max.png" alt="" /></p>
+      </li>
+      <li>
+        <p>COUNT</p>
+
+        <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/9%20meas-count.png" alt="" /></p>
+      </li>
+      <li>
+        <p>DISTINCT_COUNT</p>
+
+        <p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/9%20meas-distinct.png" alt="" /></p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>步骤4. 过滤器</strong></p>
+
+<p>这一步骤是可选的。你可以使用<code>SQL</code>格式添加一些条件过滤器。</p>
+
+<p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/10%20filter.png" alt="" /></p>
+
+<p><strong>步骤5. 更新设置</strong></p>
+
+<p>这一步骤是为增量构建cube而设计的。</p>
+
+<p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/11%20refresh-setting1.png" alt="" /></p>
+
+<p>选择分区类型、分区列和开始日期。</p>
+
+<p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/11%20refresh-setting2.png" alt="" /></p>
+
+<p><strong>步骤6. 高级设置</strong></p>
+
+<p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/12%20advanced.png" alt="" /></p>
+
+<p><strong>步骤7. 概览 &amp; 保存</strong></p>
+
+<p>你可以概览你的cube并返回之前的步骤进行修改。点击<code>Save</code>按钮完成cube创建。</p>
+
+<p><img src="https://github.com/KylinOLAP/kylinolap.github.io/blob/master/docs/tutorial/13%20overview.png" alt="" /></p>
